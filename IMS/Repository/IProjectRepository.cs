@@ -12,5 +12,6 @@ namespace IMS.Repository
         long SaveProject(Project project);
         bool ModifyProject(Project project);
         bool DeleteProject(long id);
+        List<Project> GetProjectList();
     }
 }

@@ -24,9 +24,9 @@ namespace IMS.Models
         /// 门牌号
         /// </summary>
         public string HouseNumber { get; set; }
-        public DateTime CreateTime { get; set; }
+        public string CreateTime { get; set; }
         public string CreateBy { get; set; }
-        public DateTime ModifyTime { get; set; }
+        public string ModifyTime { get; set; }
         public string ModifyBy { get; set; }
         public int Disabled { get; set; }
     }
