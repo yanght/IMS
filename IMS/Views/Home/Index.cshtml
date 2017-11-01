@@ -47,17 +47,17 @@
                     <button class="layui-btn" data-type="isAll">验证是否全选</button>
                                     <button class="layui-btn btn-block" data-type="addProject">添加</button>
                                 </div>*@
-                <table class="layui-table" lay-data="{width: '100%', height:450, url:'/home/getprojectlist', page:true, id:'idTest',limit:10}" lay-filter="demo">
+                <table class="layui-table" lay-data="{width: 'full-40', height:'full-120', url:'/home/getprojectlist', page:true, id:'idTest',limit:10}" lay-filter="demo">
                     <thead>
                         <tr>
                             @*<th lay-data="{checkbox:true, fixed: true}"></th>*@
                             @*<th lay-data="{field:'Id', width:80, sort: true, fixed: true}">ID</th>*@
                             <th lay-data="{field:'VillageName', width:200}">村庄</th>
-                            <th lay-data="{field:'SignSort', width:120}">签约名次</th>
-                            <th lay-data="{field:'HouseHolderName', width:120}">户主姓名</th>
-                            <th lay-data="{field:'HouseNumber', width:177}">门牌号</th>
-                            <th lay-data="{field:'CreateTime', width:177}">添加时间</th>
-                            <th lay-data="{fixed: 'right', width:160, align:'center', toolbar: '#barDemo'}"></th>
+                            <th lay-data="{field:'SignSort', width:100}">签约名次</th>
+                            <th lay-data="{field:'HouseHolderName', width:200}">户主姓名</th>
+                            <th lay-data="{field:'HouseNumber', width:100}">门牌号</th>
+                            <th lay-data="{field:'CreateTime', width:200}">添加时间</th>
+                            <th lay-data="{fixed: 'right', width:200, align:'center', toolbar: '#barDemo'}">操作</th>
                         </tr>
                     </thead>
                 </table>
@@ -155,6 +155,9 @@
                 content: '/home/add?id=0' //iframe的url
             });
         }
+	$(function(){
+	$.ajaxSetup({cache:false}) ;
+	})
     </script>
 </body>
 </html>
