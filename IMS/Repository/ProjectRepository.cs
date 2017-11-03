@@ -36,6 +36,9 @@ namespace IMS.Repository
             using (var cnn = SimpleDbConnection())
             {
                 cnn.Open();
+
+                cnn.Execute("update [dbo].[Project] set SignSort=SignSort+1 where SignSort>=@SignSort and Disabled=0", new { SignSort = project.SignSort });
+                
                 var result = cnn.Execute(@" Update project set 
                                             VillageName=@VillageName,
                                             SignSort=@SignSort,
@@ -58,6 +61,11 @@ namespace IMS.Repository
             using (var cnn = SimpleDbConnection())
             {
                 cnn.Open();
+
+                int maxSort = cnn.ExecuteScalar<int>(@"select top 1 SignSort from [dbo].[Project] where Disabled=0 order by SignSort desc");
+
+                project.SignSort = maxSort + 1;
+
                 var result = cnn.Execute(@" insert into project (VillageName,SignSort,HouseHolderName,HouseNumber,CreateTime,CreateBy,ModifyTime,ModifyBy,Disabled) values 
                                             (@VillageName,@SignSort,@HouseHolderName,@HouseNumber,getdate(),@CreateBy,getdate(),@ModifyBy,0)", project);
                 return result;

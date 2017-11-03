@@ -22,12 +22,16 @@
                 <input type="text" name="VillageName" value="@projet.VillageName" lay-verify="required" autocomplete="off" placeholder="请输入村庄" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">签约名次</label>
-            <div class="layui-input-block">
-                <input type="text" name="SignSort" value="@(projet.SignSort)" lay-verify="required" placeholder="请输入签约名次" autocomplete="off" class="layui-input">
+        @if (projet.Id > 0)
+        {
+            <div class="layui-form-item">
+                <label class="layui-form-label">签约名次</label>
+                <div class="layui-input-block">
+                    <input type="text" name="SignSort" value="@(projet.SignSort)" lay-verify="required" placeholder="请输入签约名次" autocomplete="off" class="layui-input">
+                </div>
             </div>
-        </div>
+        }
+       
         <div class="layui-form-item">
             <label class="layui-form-label">户主姓名</label>
             <div class="layui-input-block">
