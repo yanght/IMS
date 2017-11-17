@@ -29,7 +29,7 @@
             </ul>
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">
+                    <a href="javascript:;" onclick="changepassword()">
 
                         当前登录用户：@(admin.UserName)
 
@@ -159,6 +159,17 @@
                 shade: 0.8,
                 area: ['800px', '90%'],
                 content: '/home/add?id=0' //iframe的url
+            });
+        }
+        function changepassword()
+        {
+            layer.open({
+                type: 2,
+                title: '修改密码',
+                shadeClose: true,
+                shade: 0.8,
+                area: ['800px', '90%'],
+                content: '/admin/changepassword' //iframe的url
             });
         }
 	$(function(){

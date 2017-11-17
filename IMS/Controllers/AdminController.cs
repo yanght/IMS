@@ -43,5 +43,18 @@ namespace IMS.Controllers
             HttpContext.Response.Cookies.Add(cookie);
             return Redirect("/admin/login");
         }
+
+        [HttpGet]
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(string oldPassword, string newPassword)
+        {
+
+            return View();
+        }
     }
 }
